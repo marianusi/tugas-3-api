@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WeatherPedia</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+		svg {
+			margin: 0 10px;
+		}
+		.fg a[href] {
+			text-decoration: none;
+		}
+		.fg a[href] svg path:hover {
+			fill: lightseagreen;
+		}
+		td {
+			position: relative;
+			bottom: 10px;
+		}
+		p {
+			text-indent: 2rem;
+		}
+        input {
+            padding: 5px 15px;
+        }
+		.weather {
+			border: 1px solid #ccc;
+			padding: 10px;
+			margin-bottom: 10px;
+		  }
+	
+		  .weather h2 {
+			margin-top: 0;
+		  }
+	
+		  .weather .temperature {
+			font-size: 2em;
+			font-weight: bold;
+		  }
+	
+		  .weather .description {
+			font-size: 1.2em;
+			margin-top: 5px;
+		  }
+	
+		  .weather .icon {
+			margin-top: 10px;
+		  }
+	
+		  .weather img {
+			width: 100px;
+		  }
+        </style>
+    </head>
+    <body>
+        <center>
+            <div class="flex" style="padding: 10px 25px;background-color: white;margin-top: 20px">
+                <div class="fg">
+                    <h1 style="color: lightseagreen;">
+                        <b>WeatherPedia</b>
+                    </h1>
+                </div>
+                <div class="fg" style="margin-top: 30px;margin-right: 100px;">
+                    <a href="">
+                        <svg
+                            width="23"
+                            height="22"
+                            viewBox="0 0 23 22"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path class="nav" d="M22.0228 10.6175L11.8052 0.236428C11.7316 0.161481 11.6442 0.102021 11.548 0.0614515C11.4518 0.0208823 11.3487 0 11.2446 0C11.1404 0 11.0373 0.0208823 10.9411 0.0614515C10.8449 0.102021 10.7575 0.161481 10.6839 0.236428L0.466353 10.6175C0.168681 10.9201 0 11.3312 0 11.76C0 12.6503 0.711932 13.3741 1.58758 13.3741H2.66416V20.7816C2.66416 21.228 3.01889 21.5887 3.45796 21.5887H9.65697V15.9391H12.4352V21.5887H19.0312C19.4702 21.5887 19.825 21.228 19.825 20.7816V13.3741H20.9015C21.3232 13.3741 21.7276 13.2051 22.0252 12.9C22.6429 12.2694 22.6429 11.248 22.0228 10.6175Z" fill="#303030"/>
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg
+                            width="22"
+                            height="22"
+                            viewBox="0 0 22 22"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                class="nav"
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M11.0565 0C5.09512 0 0.262207 4.83291 0.262207 10.7943C0.262207 16.7557 5.09512 21.5887 11.0565 21.5887C17.0179 21.5887 21.8509 16.7557 21.8509 10.7943C21.8509 4.83291 17.0179 0 11.0565 0ZM12.0378 14.7195C12.0378 14.9798 11.9344 15.2294 11.7504 15.4134C11.5664 15.5975 11.3168 15.7008 11.0565 15.7008C10.7963 15.7008 10.5467 15.5975 10.3626 15.4134C10.1786 15.2294 10.0752 14.9798 10.0752 14.7195V11.7756H7.13132C6.87107 11.7756 6.62147 11.6722 6.43744 11.4882C6.25341 11.3042 6.15002 11.0546 6.15002 10.7943C6.15002 10.5341 6.25341 10.2845 6.43744 10.1004C6.62147 9.91641 6.87107 9.81302 7.13132 9.81302H10.0752V6.86912C10.0752 6.60886 10.1786 6.35926 10.3626 6.17523C10.5467 5.9912 10.7963 5.88781 11.0565 5.88781C11.3168 5.88781 11.5664 5.9912 11.7504 6.17523C11.9344 6.35926 12.0378 6.60886 12.0378 6.86912V9.81302H14.9817C15.242 9.81302 15.4916 9.91641 15.6756 10.1004C15.8597 10.2845 15.963 10.5341 15.963 10.7943C15.963 11.0546 15.8597 11.3042 15.6756 11.4882C15.4916 11.6722 15.242 11.7756 14.9817 11.7756H12.0378V14.7195Z"
+                                fill="#303030"
+                            />
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg
+                            width="23"
+                            height="22"
+                            viewBox="0 0 23 22"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path class="nav" d="M11.433 9.60695C10.7745 9.60695 10.2456 10.1359 10.2456 10.7943C10.2456 11.4528 10.7745 11.9817 11.433 11.9817C12.0915 11.9817 12.6204 11.4528 12.6204 10.7943C12.6204 10.1359 12.0915 9.60695 11.433 9.60695ZM11.433 0C5.47453 0 0.638672 4.83586 0.638672 10.7943C0.638672 16.7528 5.47453 21.5887 11.433 21.5887C17.3915 21.5887 22.2273 16.7528 22.2273 10.7943C22.2273 4.83586 17.3915 0 11.433 0ZM13.797 13.1583L4.9564 17.2709L9.06904 8.43037L17.9096 4.31773L13.797 13.1583Z" fill="#303030"/>
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg
+                            width="24"
+                            height="22"
+                            viewBox="0 0 24 22"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                class="nav"
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M11.5214 1.89123C17.9088 -4.67457 33.8785 6.81487 11.5214 21.5887C-10.8357 6.81631 5.13407 -4.67457 11.5214 1.89123Z"
+                                fill="#303030"
+                            />
+                        </svg>
+                    </a>
+                    <a href="">
+                        <svg
+                            width="25"
+                            height="20"
+                            viewBox="0 0 25 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path class="nav" d="M0.8125 5.63344L12.5257 11.7253C12.6432 11.7864 12.7737 11.8183 12.9061 11.8183C13.0386 11.8183 13.1691 11.7864 13.2865 11.7253L24.9998 5.63454V16.2165C24.9998 17.1292 24.6507 18.0073 24.0239 18.6706C23.3971 19.334 22.5402 19.7324 21.629 19.7841L21.4267 19.7896H4.38562C3.47295 19.7897 2.59485 19.4405 1.93146 18.8137C1.26806 18.1869 0.869669 17.33 0.817997 16.4188L0.8125 16.2165V5.63344ZM4.38562 7.66868e-09H21.4267C22.3393 -5.975e-05 23.2174 0.349126 23.8808 0.975926C24.5442 1.60273 24.9426 2.45962 24.9943 3.37083L24.9998 3.57312V3.77542L12.9061 10.0641L0.8125 3.77542V3.57312C0.81244 2.66045 1.16163 1.78235 1.78843 1.11896C2.41523 0.455564 3.27212 0.0571685 4.18333 0.00549725L4.38562 7.66868e-09H21.4267H4.38562Z" fill="#303030"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </center>
+        <main>
+            <div class="flex">
+                <div class="fg"></div>
+                <div class="fg" style="flex-grow: 7;">
+                    <h1>WheaterPedia</h1>
+                    <table>
+                        <tr>
+                            <td style="padding-right: 15px;color: #4E4E4E">4 post</td>
+                            <td style="padding-right: 15px;color: #4E4E4E">1M Followers</td>
+                            <td style="padding-right: 15px;color: #4E4E4E">0 Following</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <center>
+                <div class="flex" style="padding: 15px;">
+                    <div class="fg">
+                        <b>Home</b>
+                    </div>
+                    <div class="fg">
+                        <b>Source</b>
+                    </div>
+                    <div class="fg">
+                        <b>About</b>
+                    </div>
+                    <div class="fg">
+                        <b>Contact</b>
+                    </div>
+                </div>
+            </center>
+            <hr>
+            <br>
+            <article class="card">
+                <h3>City ?</h3>
+                <input type="text" id="city-input" placeholder="Enter city name">
+                <button id="get-weather-button" style="background-color: lightseagreen; color:white; border:none; padding: 5px 15px; cursor:pointer; box-shadow:2px 2px 2px lightgray">Get Weather</button>
+            </article>
+            <article class="card">
+                <h3>Weather</h3>
+                <div id="weather-container"></div>
+            </article>
+        </main>
+        <script>
+      // Masukkan API key OpenWeatherMap Anda di sini
+      const apiKey = '59e6682c2cbfeaf1373b9c30877e950a';
+
+      // Ambil elemen HTML untuk menampilkan data cuaca dan tombol
+      const weatherContainer = document.getElementById('weather-container');
+      const cityInput = document.getElementById('city-input');
+      const getWeatherButton = document.getElementById('get-weather-button');
+
+      // Buat fungsi untuk mengambil data cuaca dari OpenWeatherMap
+      const getWeatherData = async (city) => {
+        try {
+          // Kirim permintaan ke API OpenWeatherMap
+          const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
+
+          // Jika respons tidak OK, lemparkan pesan kesalahan
+          if (!response.ok) {
+            throw new Error('Failed to get weather data');
+          }
+
+          // Ambil data cuaca dari respons
+          const data = await response.json();
+
+          // Tampilkan data cuaca pada halaman HTML
+          showWeatherData(data);
+        } catch (error) {
+          console.error(error);
+
+          // Tampilkan pesan kesalahan pada halaman HTML
+          weatherContainer.innerHTML = `<p>Failed to get weather data: ${error.message}</p>`;
+        }
+      };
+
+      // Buat fungsi untuk menampilkan data cuaca pada halaman HTML
+      const showWeatherData = (data) => {
+        // Buat elemen HTML untuk menampilkan data cuaca
+        const weather = document.createElement('div');
+        weather.className = 'weather';
+
+        // Tampilkan nama kota dan suhu
+        const name = document.createElement('h2');
+        name.textContent = data.name;
+        weather.appendChild(name);
+
+        const temperature = document.createElement('div');
+        temperature.className = 'temperature';
+        temperature.textContent = `${Math.round(data.main.temp)}°C`;
+        weather.appendChild(temperature);
+
+        // Tampilkan deskripsi cuaca dan gambar ikon cuaca
+        const description = document.createElement('div');
+        description.className = 'description';
+        description.textContent = data.weather[0].description;
+        weather.appendChild(description);
+
+        const icon = document.createElement('div');
+        icon.className = 'icon';
+        const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+        const iconImg = document.createElement('img');
+        iconImg.src = iconUrl;
+        icon.appendChild(iconImg);
+        weather.appendChild(icon);
+    
+        // Tampilkan data cuaca pada halaman HTML
+        weatherContainer.innerHTML = '';
+        weatherContainer.appendChild(weather);
+      };
+    
+      // Tambahkan event listener untuk tombol "Get Weather"
+      getWeatherButton.addEventListener('click', () => {
+        const city = cityInput.value;
+        getWeatherData(city);
+      });
+        </script>
+        <footer>
+            <p style="color: #434343;">
+                <a>Meta</a>
+                &nbsp;
+                <a>About</a>
+                &nbsp;
+                <a>Blog</a>
+                &nbsp;
+                <a>Jpbs</a>
+                &nbsp;
+                <a>API</a>
+                &nbsp;
+                <a>Help</a>
+                &nbsp;
+                <a>Privacy</a>
+                &nbsp;
+                <a>Terms</a>
+                &nbsp;
+            </p>
+            <p>
+                copyright 2022 |
+                <span style="color: lightseagreen;">WeatherPedia</span>
+            </p>
+        </footer>
+    </body>
+</html>
